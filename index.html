@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<button class="test">Test</button>
+<script>
+    (function(d) {
+        d.querySelector('.test').addEventListener('click', function(e) {
+
+            var el;
+            el = d.querySelector('.success');
+            if(el) {
+                if(el.parentNode) {
+                    el.parentNode.removeChild(el);
+                }
+            } else {
+                el = d.createElement('p');
+                el.className = 'success';
+                el.innerHTML = 'success';
+                d.body.appendChild(el);
+            }
+        });
+    }(document));
+</script>
+</body>
+</html>

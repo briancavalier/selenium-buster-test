@@ -1,0 +1,18 @@
+{
+  "name": "selenium-buster-test",
+  "version": "0.0.0",
+  "description": "POC of buster + selenium/webdriver",
+  "main": "buster-wd.js",
+  "dependencies": {
+    "buster": "~0.7",
+    "serv": "~0.0.7",
+    "webdriverjs": "~0.7.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "prepublish": "curl -O http://selenium.googlecode.com/files/selenium-server-standalone-2.35.0.jar",
+    "test": "(java -jar selenium-server-standalone-2.35.0.jar&) && sleep 5 && (serv -p 8080 . &) && sleep 5 && buster-test -g phantom"
+  },
+  "author": "bcavalier@gopivotal.com",
+  "license": "MIT"
+}
